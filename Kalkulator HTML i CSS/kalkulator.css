@@ -1,0 +1,36 @@
+div.flex-container {
+    height: 500px;
+    width: 1000px;
+    border: 1px solid crimson;
+    padding: 30px;
+    margin: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.flex-content {
+    padding: 10px;
+    display: block;
+    height: 50px;
+    width: 80px;
+    border: 2px solid yellowgreen;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.pink {
+    background-color: pink;
+    /* margin: 30px; */
+}
+
+.green {
+    background-color: green;
+}
+
