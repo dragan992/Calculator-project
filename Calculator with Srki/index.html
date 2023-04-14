@@ -16,10 +16,10 @@
         <div class="container2">
             <div class="column1 column">
                 <div class="row">
-                    <button id="mnozenje" class="row-child">*</button>
-                    <button id="oduzimanje" class="row-child">-</button>
-                    <button id="sabiranje" class="row-child">+</button>
-                    <button id="deljenje" class="row-child">/</button>
+                    <button id="mnozenje" class="row-child" onclick="znakoviInterpunkcije('*')">*</button>
+                    <button id="oduzimanje" class="row-child" onclick="znakoviInterpunkcije('-')">-</button>
+                    <button id="sabiranje" class="row-child" onclick="znakoviInterpunkcije('+')">+</button>
+                    <button id="deljenje" class="row-child" onclick="znakoviInterpunkcije('/')">/</button>
                 </div>
                 <div class="row">
                     <button id="kec" class="row-child" onclick="dodajBroj(1)">1</button>
@@ -50,11 +50,11 @@
                 </div>
             </div>
             <div class="desni-deo">
-                <button id="equal">=</button>
+                <button id="equal"onclick="jednakost()">=</button>
             </div>
         </div>
         <div class="container4">
-            <button id="brisanje" class="bekspejs">BEKSPEJS</button>
+            <button id="brisanje" class="bekspejs" onclick="brisiPoslednje()">BEKSPEJS</button>
         </div>
     </div>
     <script src="index.js"></script>

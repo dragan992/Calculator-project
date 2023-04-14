@@ -10,6 +10,13 @@ console.log("Ide gas");
 5.Kada user klikne prvi broj, pa matematicku operaciju i drugi broj i kada klikne jednako, da mu se ispise tacan rezultat
 5a.Ako user deli prvi broj sa nulom, da mu se ispise greska can't divide by zero 
 */
+
+// 1. da ne mozes da upisujes nulu ako je vec nula
+
+// 2. da kada ukucas neki broj, da ti se skine nula i da krene normalno da pises broj
+
+// 3. Na C ponisti broj, i da nakon toga bude opet 0 (hint: trebas da implementiras pomocu druge funkcije)
+
 const ekran = document.getElementById("ekran");
 
 function dodajBroj(broj) {
@@ -18,9 +25,10 @@ function dodajBroj(broj) {
     if (ekran.innerText === "0" && prebaciBrojUString !== "0") {
         ekran.innerText = broj;
     }
-    if (ekran.innerText !== "0") {
+    else if (ekran.innerText !== "0") {
         ekran.innerText += broj;
     }
+    else return;
 }
 
 
@@ -30,8 +38,40 @@ function ocistiEkran() {
     ekran.innerText = "0"
 }
 
-// 1. da ne mozes da upisujes nulu ako je vec nula
+// function brisiPoslednje() {
+//     let brisac = ekran.innerText;
+//     let brisko = brisac.slice(0,-1);
+//     console.log(brisko);
+//     if (brisko === "") {
+//         ekran.innerText = "0";
+//     }
+//     else ekran.innerText = brisko;
+// } 
 
-// 2. da kada ukucas neki broj, da ti se skine nula i da krene normalno da pises broj
+function brisiPoslednje() {
+    ekran.innerText = ekran.innerText.length === 1 ? "0" : ekran.innerText.slice(0, -1);
+}
 
-// 3. Na C ponisti broj, i da nakon toga bude opet 0 (hint: trebas da implementiras pomocu druge funkcije)
+function znakoviInterpunkcije(znak) {
+    let proba = ekran.innerText.slice(-1);
+    if (ekran.innerText === "0") {
+        return;
+    }
+    else if (proba === znak || isAlreadySign(proba)) {
+        return;
+    } else {
+        ekran.innerText += znak;
+    }
+}
+
+function isAlreadySign(sign) {
+    switch(sign) {
+        case '*':
+        case '+':
+        case '-':
+        case '/':
+           return true;
+        default: 
+            return false;
+    }
+}
