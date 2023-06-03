@@ -1,5 +1,3 @@
-console.log("Ide gas");
-
 /*
 1.Hocemo kad kliknemo da na neki dugmic sa brojevima da se ispise gore na ekranu taj broj
 2.Onda cemo da implementiramo na C da stagod da si uneo, svede se na 0
@@ -60,6 +58,10 @@ function brisiPoslednje() {
 }
 
 function znakoviInterpunkcije(znak) {
+    if(areThereTwoNumbers(ekran.innerText)) {
+        showHideError(true, 'You shall not pass');
+        return;
+    }
     let proba = lastCharacterInString(ekran.innerText);
     if (ekran.innerText === "0") {
         showHideError(true, 'invalid format')
@@ -67,6 +69,7 @@ function znakoviInterpunkcije(znak) {
     else if (proba === znak || isSign(proba)) {
         showHideError(true, 'invalid format')
     } else {
+       
         ekran.innerText += znak;
         showHideError(false, '');
     }
